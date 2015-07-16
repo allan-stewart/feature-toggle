@@ -2,7 +2,7 @@
 
 namespace FeatureToggle
 {
-    public class Toggle
+    public class Toggle : IToggle
     {
         readonly IHasher hasher;
 

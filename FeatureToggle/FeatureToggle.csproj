@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IHasher.cs" />
+    <Compile Include="IToggle.cs" />
     <Compile Include="Toggle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToggleConfig.cs" />
