@@ -21,7 +21,7 @@ if (toggle.IsFeatureOn(config, identifier))
 You must always pass a `config` and an `identifier` into the feature toggle.
 
 We build this with dependency injection in mind which is why there is an `IToggle` interface.
-This also makes unit testing easier. 
+This also makes unit testing easier.
 
 ### Config
 
@@ -88,3 +88,9 @@ If the percent is set to .5 and the group is set to 1, then
     0x05 / 0xFF is 0.01960,
     0.01960 is less than .5 so the user does see the feature.
 ```
+
+## Try it out
+
+We have included a small console application that can be used to test the feature toggle functionality.
+When you first run it a `model.xml` file will be created in the `bin\Debug` folder.
+This file can be modified to test different config values and identifiers.
