@@ -28,9 +28,24 @@ namespace FeatureToggleSpecs
         public void When_checking_the_toggle_for_a_percent(double randomConfig, bool expected)
         {
 
-            mockHasher.Setup(x => x.Hash(identifier)).Returns(Enumerable.Range(128, 10).Select(x => (byte) x).ToArray);
+            mockHasher.Setup(x => x.Hash(identifier)).Returns(new byte[] { 0x80, 0x05, 0xAE });
 
             var result = ClassUnderTest.IsFeatureOn("percent=" + randomConfig, identifier);
+
+            Assert.That(result, Is.EqualTo(expected));
+        }
+
+        [TestCase(.5, 0, true)]
+        [TestCase(.5, 1, false)]
+        [TestCase(.5, 2, true)]
+        [TestCase(.5, 3, true)]
+        [TestCase(.5, 4, false)]
+        [TestCase(.5, 5, true)]
+        public void When_checking_the_toggle_for_a_percent_with_a_group(double randomConfig, int group, bool expected)
+        {
+            mockHasher.Setup(x => x.Hash(identifier)).Returns(new byte[] { 0x80, 0x05, 0xAE });
+
+            var result = ClassUnderTest.IsFeatureOn(string.Format("percent={0},group={1}", randomConfig, group), identifier);
 
             Assert.That(result, Is.EqualTo(expected));
         }

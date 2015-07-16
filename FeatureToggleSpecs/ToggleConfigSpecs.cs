@@ -51,17 +51,33 @@ namespace FeatureToggleSpecs
 
             Assert.That(result.ConfigType, Is.EqualTo(ToggleConfigType.Percent));
             Assert.That(result.Percent, Is.EqualTo(expectedPercent));
+            Assert.That(result.PercentGroup, Is.EqualTo(0));
+        }
+
+        [TestCase("percent=0,group=1", 0, 1)]
+        [TestCase("percent=1,group=2", 1, 2)]
+        [TestCase("percent=.25,group=0", .25, 0)]
+        public void When_parsing_a_percent_with_a_group(string config, double expectedPercent, int expectedGroup)
+        {
+            var result = new ToggleConfig(config);
+
+            Assert.That(result.ConfigType, Is.EqualTo(ToggleConfigType.Percent));
+            Assert.That(result.Percent, Is.EqualTo(expectedPercent));
+            Assert.That(result.PercentGroup, Is.EqualTo(expectedGroup));
         }
 
         [TestCase("percent=")]
         [TestCase("percent=wat")]
+        [TestCase("percent=.3,")]
+        [TestCase("percent=.3,group=")]
+        [TestCase("percent=.3,group=x")]
         public void When_parsing_an_invalid_percent(string config)
         {
             var exception = Assert.Throws<ToggleConfigException>(() => new ToggleConfig(config));
 
             Assert.That(exception.Message, Is.StringStarting("Invalid toggle configuration: " + config));
             Assert.That(exception.ParamName, Is.EqualTo("config"));
-            Assert.That(exception.InnerException, Is.TypeOf<FormatException>());
+            Assert.That(exception.InnerException, Is.Not.Null);
         }
 
         [TestCase("start=2015-07-16T01:40:00Z", "2015-07-16T01:40:00Z")]

@@ -22,7 +22,7 @@ namespace FeatureToggle
                 case ToggleConfigType.On:
                     return true;
                 case ToggleConfigType.Percent:
-                    return IsIdentifierWithinPercentage(toggleConfig.Percent, identifier);
+                    return IsIdentifierWithinPercentage(toggleConfig, identifier);
                 case ToggleConfigType.Start:
                     return HasTimeArrived(toggleConfig.StartUtc);
                 case ToggleConfigType.End:
@@ -39,11 +39,12 @@ namespace FeatureToggle
             return timestamp <= DateTime.UtcNow;
         }
 
-        bool IsIdentifierWithinPercentage(double percent, string identifier)
+        bool IsIdentifierWithinPercentage(ToggleConfig toggleConfig, string identifier)
         {
             var bytes = hasher.Hash(identifier);
-            var result = bytes[0] / 255d;
-            return result >= percent;
+            var group = toggleConfig.PercentGroup % bytes.Length;
+            var result = bytes[group] / 255d;
+            return result >= toggleConfig.Percent;
         }
     }
 }

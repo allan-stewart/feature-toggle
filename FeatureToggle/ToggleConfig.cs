@@ -6,6 +6,7 @@ namespace FeatureToggle
     {
         public ToggleConfigType ConfigType { get; set; }
         public double Percent { get; set; }
+        public int PercentGroup { get; set; }
         public DateTime StartUtc { get; set; }
         public DateTime EndUtc { get; set; }
 
@@ -55,7 +56,13 @@ namespace FeatureToggle
             ConfigType = ToggleConfigType.Percent;
             try
             {
-                Percent = Convert.ToDouble(config.Substring("percent=".Length));
+                var parts = config.Substring("percent=".Length).Split(',');
+
+                Percent = Convert.ToDouble(parts[0]);
+                if (parts.Length > 1)
+                {
+                    PercentGroup = Int32.Parse(parts[1].Substring("group=".Length));
+                }
             }
             catch (Exception exception)
             {
