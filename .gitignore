@@ -1,0 +1,17 @@
+*.suo
+*.user
+*.ReSharper
+_ReSharper*
+*.sln.DotSettings
+*.dotCover
+*.orig
+bin/
+obj/
+Debug/
+Release/
+ClientBin/
+/packages/*
+*.log
+dist/
+node_modules/
+bower_components/
