@@ -22,9 +22,9 @@ namespace FeatureToggleSpecs
             ClassUnderTest = new Toggle(mockHasher.Object);
         }
 
-        [TestCase(.2, true)]
-        [TestCase(.5, true)]
-        [TestCase(.9, false)]
+        [TestCase(.2, false)]
+        [TestCase(.5, false)]
+        [TestCase(.9, true)]
         public void When_checking_the_toggle_for_a_percent(double randomConfig, bool expected)
         {
 
@@ -35,12 +35,12 @@ namespace FeatureToggleSpecs
             Assert.That(result, Is.EqualTo(expected));
         }
 
-        [TestCase(.5, 0, true)]
-        [TestCase(.5, 1, false)]
-        [TestCase(.5, 2, true)]
-        [TestCase(.5, 3, true)]
-        [TestCase(.5, 4, false)]
-        [TestCase(.5, 5, true)]
+        [TestCase(.5, 0, false)]
+        [TestCase(.5, 1, true)]
+        [TestCase(.5, 2, false)]
+        [TestCase(.5, 3, false)]
+        [TestCase(.5, 4, true)]
+        [TestCase(.5, 5, false)]
         public void When_checking_the_toggle_for_a_percent_with_a_group(double randomConfig, int group, bool expected)
         {
             mockHasher.Setup(x => x.Hash(identifier)).Returns(new byte[] { 0x80, 0x05, 0xAE });
