@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggle", "FeatureTog
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureToggleSpecs", "FeatureToggleSpecs\FeatureToggleSpecs.csproj", "{A9DF7002-C35C-4139-B4CA-1789C7E19067}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleConsoleApp", "ExampleConsoleApp\ExampleConsoleApp.csproj", "{4460E508-ECA7-4A14-864B-E030419613A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A9DF7002-C35C-4139-B4CA-1789C7E19067}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9DF7002-C35C-4139-B4CA-1789C7E19067}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9DF7002-C35C-4139-B4CA-1789C7E19067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4460E508-ECA7-4A14-864B-E030419613A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4460E508-ECA7-4A14-864B-E030419613A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4460E508-ECA7-4A14-864B-E030419613A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4460E508-ECA7-4A14-864B-E030419613A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
