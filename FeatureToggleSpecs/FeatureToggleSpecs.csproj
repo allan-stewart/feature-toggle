@@ -53,7 +53,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FeatureToggleHackDay\FeatureToggle.csproj">
+    <ProjectReference Include="..\FeatureToggle\FeatureToggle.csproj">
       <Project>{420a6b73-f373-4d7f-aff8-66961c633f82}</Project>
       <Name>FeatureToggle</Name>
     </ProjectReference>
