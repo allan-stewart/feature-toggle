@@ -20,6 +20,9 @@ if (toggle.IsFeatureOn(config, identifier))
 
 You must always pass a `config` and an `identifier` into the feature toggle.
 
+We build this with dependency injection in mind which is why there is an `IToggle` interface.
+This also makes unit testing easier. 
+
 ### Config
 
 The `config` value is a string which specifies how the feature toggle should behave.
@@ -50,6 +53,8 @@ Examples:
 "percent=.25"
 "percent=.25,group=2"
 ```
+
+If you provide an invalid config value a `ToggleConfigException` will be thrown.
 
 ### Identifier
 
