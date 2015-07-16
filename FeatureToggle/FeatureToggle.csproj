@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hasher.cs" />
     <Compile Include="IHasher.cs" />
     <Compile Include="IToggle.cs" />
     <Compile Include="Toggle.cs" />

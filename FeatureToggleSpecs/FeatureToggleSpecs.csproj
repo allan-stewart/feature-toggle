@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HasherSpecs.cs" />
     <Compile Include="ToggleConfigSpecs.cs" />
     <Compile Include="ToggleSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
