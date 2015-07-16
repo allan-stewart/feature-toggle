@@ -72,6 +72,7 @@ Example calculation:
 
 ```
 Let the hash for the identifier "test-user" start with "8005AE".
+
 If the percent is set to .5 and the group is not set (default to 0), then
     hash[0] is 0x80,
     0x80 / 0xFF is 0.50196,
