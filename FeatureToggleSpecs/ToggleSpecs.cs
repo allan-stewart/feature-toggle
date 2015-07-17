@@ -28,7 +28,7 @@ namespace FeatureToggleSpecs
         public void When_checking_the_toggle_for_a_percent(double randomConfig, bool expected)
         {
 
-            mockHasher.Setup(x => x.Hash(identifier)).Returns(new byte[] { 0x80, 0x05, 0xAE });
+            mockHasher.Setup(x => x.Hash(identifier)).Returns(new byte[] { 0x80, 0x05, 0xAE, 0x00, 0xFF });
 
             var result = ClassUnderTest.IsFeatureOn("percent=" + randomConfig, identifier);
 
@@ -38,12 +38,12 @@ namespace FeatureToggleSpecs
         [TestCase(.5, 0, false)]
         [TestCase(.5, 1, true)]
         [TestCase(.5, 2, false)]
-        [TestCase(.5, 3, false)]
-        [TestCase(.5, 4, true)]
+        [TestCase(0, 3, false)]
+        [TestCase(1, 4, true)]
         [TestCase(.5, 5, false)]
         public void When_checking_the_toggle_for_a_percent_with_a_group(double randomConfig, int group, bool expected)
         {
-            mockHasher.Setup(x => x.Hash(identifier)).Returns(new byte[] { 0x80, 0x05, 0xAE });
+            mockHasher.Setup(x => x.Hash(identifier)).Returns(new byte[] { 0x80, 0x05, 0xAE, 0x00, 0xFF });
 
             var result = ClassUnderTest.IsFeatureOn(string.Format("percent={0},group={1}", randomConfig, group), identifier);
 

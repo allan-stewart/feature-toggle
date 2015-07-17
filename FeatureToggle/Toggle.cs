@@ -43,8 +43,8 @@ namespace FeatureToggle
         {
             var bytes = hasher.Hash(identifier);
             var group = toggleConfig.PercentGroup % bytes.Length;
-            var result = bytes[group] / 255d;
-            return result <= toggleConfig.Percent;
+            var result = bytes[group] / 256d;
+            return result < toggleConfig.Percent;
         }
     }
 }

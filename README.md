@@ -80,13 +80,13 @@ Let the hash for the identifier "test-user" start with "8005AE".
 
 If the percent is set to .5 and the group is not set (default to 0), then
     hash[0] is 0x80,
-    0x80 / 0xFF is 0.50196,
-    0.50196 is greater than .5 so the user does not see the feature.
+    0x80 / 256 is 0.5,
+    0.5 is not less than .5 so the user will get the feature.
 
 If the percent is set to .5 and the group is set to 1, then
     hash[1] is 0x05,
-    0x05 / 0xFF is 0.01960,
-    0.01960 is less than .5 so the user does see the feature.
+    0x05 / 256 is 0.01953,
+    0.01953 is less than .5 so the user will get the feature.
 ```
 
 ## Try it out
