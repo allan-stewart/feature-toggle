@@ -37,7 +37,7 @@ namespace FeatureToggleSpecs
         {
             var exception = Assert.Throws<ToggleConfigException>(() => new ToggleConfig(config));
 
-            Assert.That(exception.Message, Is.StringStarting("Invalid toggle configuration: " + config));
+            Assert.That(exception.Message.StartsWith("Invalid toggle configuration: " + config));
             Assert.That(exception.ParamName, Is.EqualTo("config"));
             Assert.That(exception.InnerException, Is.Null);
         }
@@ -75,7 +75,7 @@ namespace FeatureToggleSpecs
         {
             var exception = Assert.Throws<ToggleConfigException>(() => new ToggleConfig(config));
 
-            Assert.That(exception.Message, Is.StringStarting("Invalid toggle configuration: " + config));
+            Assert.That(exception.Message.StartsWith("Invalid toggle configuration: " + config));
             Assert.That(exception.ParamName, Is.EqualTo("config"));
             Assert.That(exception.InnerException, Is.Not.Null);
         }
@@ -96,7 +96,7 @@ namespace FeatureToggleSpecs
         {
             var exception = Assert.Throws<ToggleConfigException>(() => new ToggleConfig(config));
 
-            Assert.That(exception.Message, Is.StringStarting("Invalid toggle configuration: " + config));
+            Assert.That(exception.Message.StartsWith("Invalid toggle configuration: " + config));
             Assert.That(exception.ParamName, Is.EqualTo("config"));
             Assert.That(exception.InnerException, Is.TypeOf<FormatException>());
         }
@@ -117,7 +117,7 @@ namespace FeatureToggleSpecs
         {
             var exception = Assert.Throws<ToggleConfigException>(() => new ToggleConfig(config));
 
-            Assert.That(exception.Message, Is.StringStarting("Invalid toggle configuration: " + config));
+            Assert.That(exception.Message.StartsWith("Invalid toggle configuration: " + config));
             Assert.That(exception.ParamName, Is.EqualTo("config"));
             Assert.That(exception.InnerException, Is.TypeOf<FormatException>());
         }
@@ -143,7 +143,7 @@ namespace FeatureToggleSpecs
         {
             var exception = Assert.Throws<ToggleConfigException>(() => new ToggleConfig(config));
 
-            Assert.That(exception.Message, Is.StringStarting("Invalid toggle configuration: " + config));
+            Assert.That(exception.Message.StartsWith("Invalid toggle configuration: " + config));
             Assert.That(exception.ParamName, Is.EqualTo("config"));
             Assert.That(exception.InnerException, Is.Not.Null);
         }
