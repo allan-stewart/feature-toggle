@@ -39,7 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FeatureToggleSettings.cs" />
     <Compile Include="Hasher.cs" />
+    <Compile Include="IFeatureToggleSettingsRepository.cs" />
     <Compile Include="IHasher.cs" />
     <Compile Include="IToggle.cs" />
     <Compile Include="Toggle.cs" />
@@ -47,6 +49,7 @@
     <Compile Include="ToggleConfig.cs" />
     <Compile Include="ToggleConfigException.cs" />
     <Compile Include="ToggleConfigType.cs" />
+    <Compile Include="FeatureToggleEvaluator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

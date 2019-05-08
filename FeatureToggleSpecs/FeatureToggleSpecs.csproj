@@ -63,6 +63,7 @@
     <Compile Include="ToggleConfigSpecs.cs" />
     <Compile Include="ToggleSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FeatureToggleEvaluatorSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
