@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="FeatureToggleSettings.cs" />
     <Compile Include="Hasher.cs" />
+    <Compile Include="IFeatureToggleEvaluator.cs" />
     <Compile Include="IFeatureToggleSettingsRepository.cs" />
     <Compile Include="IHasher.cs" />
     <Compile Include="IToggle.cs" />
