@@ -1,6 +1,6 @@
 ﻿namespace FeatureToggle
 {
-    public class FeatureToggleEvaluator
+    public class FeatureToggleEvaluator : IFeatureToggleEvaluator
     {
         readonly IHasher hasher;
         readonly IFeatureToggleSettingsRepository repository;
